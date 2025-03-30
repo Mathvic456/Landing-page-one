@@ -1,0 +1,174 @@
+/* Parent Container */
+.Parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13% 10%;
+    gap: 50px;
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap; /* Stacks elements on small screens */
+}
+
+/* Left Section */
+.Left-container {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Responsive Heading */
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+span {
+    color: #ff3b7d;
+}
+
+/* Paragraph */
+p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Buttons Container */
+.Buttons-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Common Button Styling */
+.Contact-us, .Learn-more {
+    height: 40px;
+    width: 150px;
+    border-radius: 7px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #ff3b7d;
+    color: #ff3b7d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.Contact-us:hover, .Learn-more:hover {
+    background-color: #ff3b7d;
+    color: white;
+}
+
+/* Right Section */
+.Right-container {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Container */
+.image-container {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    background-image: url('../assets/ImageOne.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    animation: floatAnimation 1.5s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* ✅ Fully Responsive for Tablets */
+@media (max-width: 768px) {
+    .Parent-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 5%;
+    }
+
+    .Left-container {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .Buttons-container {
+        justify-content: center;
+    }
+
+    .Right-container {
+        max-width: 100%;
+    }
+
+    .image-container {
+        width: 90%;
+        height: 250px;
+    }
+}
+
+/* ✅ Fully Responsive for Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+    .Parent-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 5%;
+        gap: 20px; /* Reduced gap */
+    }
+
+    .Left-container {
+        text-align: center;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller text for mobile */
+        line-height: 1.4;
+    }
+
+    p {
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 0 10px; /* Adds space around text */
+    }
+
+    .Buttons-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .Contact-us, .Learn-more {
+        width: 90%;
+        max-width: 250px;
+        height: 45px;
+    }
+
+    .Right-container {
+        width: 100%;
+    }
+
+    .image-container {
+        width: 95%;
+        height: 220px;
+    }
+}
