@@ -3,11 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 13% 10%;
-    gap: 50px;
+    padding: 10% 8%;
+    gap: 40px;
     width: 100%;
     max-width: 100%;
-    flex-wrap: wrap; /* Stacks elements on small screens */
+    flex-wrap: wrap;
 }
 
 /* Left Section */
@@ -19,8 +19,11 @@
 
 /* Responsive Heading */
 h1 {
-    font-size: 40px;
+    font-size: clamp(24px, 5vw, 40px); /* Dynamically adjusts */
     font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    margin-top:70px;
 }
 
 span {
@@ -30,21 +33,23 @@ span {
 /* Paragraph */
 p {
     font-weight: 600;
-    font-size: 16px;
+    font-size: clamp(13px, 3vw, 16px); /* Adapts to screen size */
     line-height: 1.6;
 }
 
 /* Buttons Container */
 .Buttons-container {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
     margin-top: 20px;
 }
 
 /* Common Button Styling */
 .Contact-us, .Learn-more {
-    height: 40px;
-    width: 150px;
+    height: 45px;
+    width: 160px;
+    max-width: 100%;
     border-radius: 7px;
     text-align: center;
     font-weight: bold;
@@ -91,7 +96,7 @@ p {
     100% { transform: translateY(0); }
 }
 
-/* ✅ Fully Responsive for Tablets */
+/* ✅ Responsive for Tablets (Max: 768px) */
 @media (max-width: 768px) {
     .Parent-container {
         flex-direction: column;
@@ -126,13 +131,13 @@ p {
     }
 }
 
-/* ✅ Fully Responsive for Mobile Phones (320px - 480px) */
+/* ✅ Fully Responsive for Mobile Phones (Max: 480px) */
 @media (max-width: 480px) {
     .Parent-container {
         flex-direction: column;
         align-items: center;
         padding: 5%;
-        gap: 20px; /* Reduced gap */
+        gap: 20px;
     }
 
     .Left-container {
@@ -141,20 +146,21 @@ p {
     }
 
     h1 {
-        font-size: 24px; /* Smaller text for mobile */
+        font-size: 22px;
         line-height: 1.4;
+        margin-top: 60px;
     }
 
     p {
-        font-size: 13px;
+        font-size: 12px;
         line-height: 1.5;
-        padding: 0 10px; /* Adds space around text */
+        padding: 0 10px;
     }
 
     .Buttons-container {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 12px;
     }
 
     .Contact-us, .Learn-more {
@@ -169,6 +175,32 @@ p {
 
     .image-container {
         width: 95%;
-        height: 220px;
+        height: 200px;
+    }
+}
+
+/* ✅ Extra Small Devices (Max: 320px) */
+@media (max-width: 320px) {
+    .Parent-container {
+        gap: 15px;
+        padding: 4%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 11px;
+    }
+
+    .Contact-us, .Learn-more {
+        width: 100%;
+        height: 40px;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 180px;
     }
 }
